@@ -55,11 +55,11 @@ class EmployeeController extends Controller
 
     public function exportCsv(Request $request)
     {
-        return $this->employeeService->exportCsv($request);
+        return $this->employeeService->exportCsv($request,auth()->id());
     }
 
     public function exportPdf(Request $request)
     {
-        return $this->employeeService->exportPdf($request);
+        return $this->employeeService->exportPdf($request,auth()->id());
     }
 }
